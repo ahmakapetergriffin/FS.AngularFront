@@ -1,0 +1,21 @@
+<button class="btn-new" routerLink="/añadir"> Añadir nuevo Coche</button>
+<table>
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Modificar</th>
+      
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let coche of coches">
+            <td>{{coche.marca}}</td>
+            <td>{{coche.modelo}}</td>
+            <td>
+                <button class="btn-update" routerLink="/porid/{{coche.id}}"> Actualizar </button>
+                <button class="btn-delete" (click)="deleteCoche(coche.id)"> Borrar </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
